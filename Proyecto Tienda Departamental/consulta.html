@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f560bc, #fad0c4);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .tabs {
+            width: 90%;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tab-buttons {
+            display: flex;
+            background: #6A1B9A;
+            width: 100%;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .tab-buttons button {
+            flex: 1;
+            padding: 10px;
+            background: #6A1B9A;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .tab-buttons button:hover {
+            background: #9C4D97;
+        }
+
+        .tab-buttons .active {
+            background: #f3e5f5;
+            color: #6A1B9A;
+            font-weight: bold;
+        }
+
+        .tab-content {
+            padding: 20px;
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .credit-info {
+            width: 90%;
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .credit-info h3 {
+            margin: 0;
+        }
+
+        .btn-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            width: 90%;
+        }
+
+        .btn-container button {
+            padding: 10px 15px;
+            background: #6A1B9A;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+        }
+
+        .btn-container button:hover {
+            background: #9C4D97;
+        }
+
+        .btn-container img {
+            width: 20px;
+            margin-right: 8px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10px 0;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        table th {
+            background-color: #6A1B9A;
+            color: white;
+        }
+
+        .no-data {
+            color: gray;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Consultas</h1>
+    <div class="credit-info">
+        <h3>Crédito Inicial:</h3>
+        <p>Usted cuenta con un crédito de $3,000.</p>
+    </div>
+
+    <div class="tabs">
+        <div class="tab-buttons">
+            <button onclick="openTab('ConsultasDeCompra')" aria-controls="ConsultasDeCompra" aria-selected="false">Consultas De Compras</button>
+            <button onclick="openTab('credito')" aria-controls="credito" aria-selected="false">Crédito</button>
+            <button onclick="openTab('Pagosvencidos')" aria-controls="Pagosvencidos" aria-selected="false">Pagos Vencidos</button>
+            <button onclick="openTab('Proximopago')" aria-controls="Proximopago" aria-selected="false">Próximo Pago</button>
+            <button onclick="openTab('Fechadecorte')" aria-controls="Fechadecorte" aria-selected="false">Fecha De Corte</button>
+        </div>
+        <div class="tab-content" id="ConsultasDeCompra">
+            <h2>Consultas De Compra</h2>
+            <p>Listado con los detalles de compras realizadas:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Detalle</th>
+                        <th>Monto</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>15/11/2024</td>
+                        <td>Compra de ropa</td>
+                        <td>$500</td>
+                    </tr>
+                    <tr>
+                        <td>20/11/2024</td>
+                        <td>Electrodomésticos</td>
+                        <td>$1,200</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="tab-content" id="credito">
+            <h2>Crédito</h2>
+            <p>Su crédito actual es de $1,300. Disponible después de las compras realizadas.</p>
+        </div>
+        <div class="tab-content" id="Pagosvencidos">
+            <h2>Pagos Vencidos</h2>
+            <p>No tiene pagos vencidos actualmente.</p>
+        </div>
+        <div class="tab-content" id="Proximopago">
+            <h2>Próximo Pago</h2>
+            <p>Fecha del próximo pago: <strong>30/11/2024</strong></p>
+        </div>
+        <div class="tab-content" id="Fechadecorte">
+            <h2>Fecha De Corte</h2>
+            <p>Fecha límite de pago: <strong>28/11/2024</strong></p>
+        </div>
+    </div>
+
+    <div class="btn-container">
+        <button onclick="location.href='menu.html'">Volver al Menú</button>
+        <button onclick="solicitarCredito()">Solicitar Aumento De Crédito</button>
+        <button onclick="irCarrito()">
+            <img src="https://cdn-icons-png.flaticon.com/512/4437/4437686.png" alt="Carrito">
+            Ir al carrito de compras
+        </button>
+    </div>
+
+    <script>
+        function openTab(tabName) {
+            const buttons = document.querySelectorAll('.tab-buttons button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            buttons.forEach(button => button.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            document.querySelector(`#${tabName}`).classList.add('active');
+            document.querySelector(`[onclick="openTab('${tabName}')"]`).classList.add('active');
+        }
+
+        function solicitarCredito() {
+            const confirmacion = confirm('¿Está seguro de que desea solicitar un aumento de crédito?');
+            if (confirmacion) {
+                alert('Solicitud enviada con éxito.');
+                location.href = 'credito.html';
+            }
+        }
+
+        function irCarrito() {
+            // Validación previa al carrito
+            alert('Redirigiendo al carrito de compras...');
+            location.href = 'carrito.html';
+        }
+    </script>
+</body>
+</html>

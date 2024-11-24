@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bienvenido</h1>
+    </header>
+    <main>
+        <div class="login-container">
+            <div class="image-section">
+                <img src="https://media.vogue.mx/photos/5d8128cfc147f70008ba0147/2:3/w_1600,c_limit/Bolsas-Shopping.jpg" alt="Shopping" />
+            </div>
+            <div class="form-section">
+                <h2>Iniciar Sesión</h2>
+                <form id="loginForm">
+                    <label for="username">Usuario:</label>
+                    <input type="text" id="username" name="username" required>
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Iniciar Sesión</button>
+                </form>
+                <p>¿No tienes cuenta? <a href="register.html">Regístrate aquí</a></p>
+            </div>
+        </div>
+    </main>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+            // Obtener los valores de los campos de texto
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Obtener las credenciales guardadas en localStorage
+            const storedUsername = localStorage.getItem('username');
+            const storedPassword = localStorage.getItem('password');
+
+            // Verificar las credenciales
+            if (username === storedUsername && password === storedPassword) {
+                // Redirigir al menú si las credenciales son correctas
+                window.location.href = "menu.html";
+            } else {
+                // Mostrar un mensaje de error si las credenciales no coinciden
+                alert("Usuario o contraseña incorrectos.");
+            }
+        });
+    </script>
+</body>
+</html>

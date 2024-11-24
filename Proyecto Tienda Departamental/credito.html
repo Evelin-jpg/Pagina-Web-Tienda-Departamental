@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitar Aumento De Crédito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #f3d9fa, #ff4bd8);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            background: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+        .header img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        header h1 {
+            margin: 20px 0;
+            font-size: 24px;
+            color: #000000;
+        }
+        button {
+            background-color: #8400ff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px 0;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #4e00b3;
+        }
+        .file-input {
+            margin: 15px 0;
+            text-align: left;
+        }
+        .file-input label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 5px;
+            color: #000000;
+        }
+        input[type="file"] {
+            margin-top: 5px;
+        }
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Contenedor principal -->
+    <div class="container">
+        <!-- Encabezado -->
+        <div class="header">
+            <img src="https://cdn.shopify.com/s/files/1/0070/7032/articles/ecommerce_20shopping_20cart_4c343e41-1041-49d3-bca8-3d7d1aa06d90.png?v=1729263457" alt="Encabezado">
+        </div>
+
+        <!-- Título -->
+        <header>
+            <h1>Solicitar Aumento De Crédito</h1>
+        </header>
+
+        <!-- Sección de carga de archivos -->
+        <div class="file-input">
+            <label for="comprobante">Comprobante de Domicilio (PDF):</label>
+            <input type="file" id="comprobante" accept=".pdf">
+        </div>
+        <div class="file-input">
+            <label for="identidad">Foto o INE (Imagen):</label>
+            <input type="file" id="identidad" accept="image/*">
+        </div>
+
+        <!-- Botones -->
+        <div class="btn-container">
+            <button onclick="location.href='menu.html'">Volver al Menú</button>
+            <button onclick="aceptarSolicitud()">Aceptar Solicitud</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function volverAlMenu() {
+            alert("Volviendo al menú principal...");
+            // Aquí puedes redirigir al menú principal con window.location.href
+        }
+
+        function aceptarSolicitud() {
+            const comprobante = document.getElementById('comprobante').files[0];
+            const identidad = document.getElementById('identidad').files[0];
+
+            if (!comprobante || !identidad) {
+                alert("Por favor, sube ambos archivos antes de continuar.");
+                return;
+            }
+
+            alert("Solicitud de aumento de crédito enviada correctamente.");
+            // Aquí podrías enviar los datos al servidor o guardar la solicitud
+        }
+    </script>
+</body>
+</html>

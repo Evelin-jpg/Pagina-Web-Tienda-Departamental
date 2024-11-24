@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="styles2.css">
+    <style>
+        /* Estilos internos */
+        .form-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+
+        .form-container h1 {
+            text-align: center;
+            margin-top: 10px;
+            font-size: 24px;
+        }
+
+        header h1 {
+            font-size: 30px;
+            color: #6A1B9A;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        input {
+            margin-bottom: 15px;
+            padding: 8px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            background-color: #6A1B9A;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #9C4D97;
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Contenedor con imagen y título dentro del formulario -->
+     <div class="form-container">
+        <img src="https://ticnegocios.camaravalencia.com/wp-content/uploads/2018/12/instagram-shopping.jpg" alt="Encabezado">
+        <header>
+            <h1>Registro</h1>
+        </header>
+
+        <h3>Crear Cuenta</h3>
+        <form id="registerForm">
+            <label for="username">Nuevo Usuario:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Nuevo Password:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Aceptar</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
+
+            // Obtener los valores de los campos de texto
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Guardar en localStorage
+            localStorage.setItem('username', username);
+            localStorage.setItem('password', password);
+
+            alert("Registro exitoso! Puedes iniciar sesión.");
+            window.location.href = "login.html"; // Redirigir al login
+        });
+    </script>
+
+</body>
+</html>

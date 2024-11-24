@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+            color: #000000;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #444;
+        }
+
+        .divider {
+            height: 4px;
+            background-color: #ffffff;
+            margin: 10px 0;
+        }
+
+        .section {
+            padding: 20px;
+        }
+
+        .section h2 {
+            text-align: left;
+            padding-left: 10px;
+            margin-bottom: 20px;
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .product {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            width: 150px;
+            text-align: center;
+            padding: 10px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border-radius: 4px;
+        }
+
+        .product button {
+            background-color: #ea00ff;
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product button:hover {
+            background-color: #b3009b;
+        }
+
+        @media (max-width: 768px) {
+            .product {
+                width: 120px;
+            }
+
+            .product img {
+                width: 80px;
+                height: 80px;
+            }
+
+            .product-container {
+                gap: 10px;
+            }
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+
+        table th, table td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #7604e0;
+            color: #fff;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Carrito de Compras</h1>
+    <div class="divider"></div>
+
+    <!-- Sección de Mujeres -->
+    <div class="section">
+        <h2>Sección De Mujeres</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/conjunto%20femenino.jpg" alt="Conjunto Femenino">
+                <button onclick="agregarProducto('Conjunto Femenino', 100)">Conjunto Femenino</button>
+            </div>
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/reloj%20femenino.jpg" alt="Reloj Femenino">
+                <button onclick="agregarProducto('Reloj Femenino', 1200)">Reloj Femenino</button>
+            </div>
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/bolso%20de%20mujer.jpg" alt="Bolso Para Dama">
+                <button onclick="agregarProducto('Bolso Para Dama', 238)">Bolso Para Dama</button>
+            </div>
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/collar%20mariposa%20mujer.jpg" alt="Collar De Mariposa">
+                <button onclick="agregarProducto('Collar De Mariposa', 75)">Collar De Mariposa</button>
+            </div>
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/samsung%20A15.jpg" alt="Celular Samsung A15">
+                <button onclick="agregarProducto('Celular Samsung A15', 2957)">Celular Samsung A15</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sección de Hombres -->
+    <div class="section">
+        <h2>Sección De Hombres</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/conjunto%20masculino.jpg" alt="Conjunto Masculino">
+                <button onclick="agregarProducto('Conjunto Masculino', 375)">Conjunto Masculino</button>
+            </div>
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/reloj%20de%20hombre.jfif" alt="Reloj Gris Y Negro">
+                <button onclick="agregarProducto('Reloj Gris Y Negro', 212)">Reloj Gris Y Negro</button>
+            </div>
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/mochila%20para%20laptop%20hombre.jpg" alt="Mochila Para Laptop">
+                <button onclick="agregarProducto('Mochila Para Laptop', 446)">Mochila Para Laptop</button>
+            </div>
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/Motorola%20G14.jfif" alt="Celular Motorola G14">
+                <button onclick="agregarProducto('Celular Motorola G14', 1999)">Celular Motorola G14</button>
+            </div>
+            <div class="product">
+                <img src="https://raw.githubusercontent.com/Evelin-jpg/imagenesproyectoV/refs/heads/main/collar%20de%20hombre%20flechas.jfif" alt="Collar De Flecha">
+                <button onclick="agregarProducto('Collar De Flecha', 75)">Collar De Flecha</button>
+            </div>
+        </div>
+    </div>
+
+    <div style="height: 4px; background-color: #ffffff; margin: 20px 0;"></div>
+
+    <h3 style="text-align: center;">Carrito:</h3>
+    <table id="carrito">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Cantidad</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <div style="text-align: center; margin-top: 10px;">
+        <strong>Total: $<span id="total">0</span></strong>
+    </div>
+
+    <div style="text-align: center; margin-top: 10px;">
+        <button onclick="vaciarCarrito()">Vaciar Carrito</button>
+
+         <!-- Botones -->
+         <div class="btn-container">
+            <button onclick="location.href='menu.html'">Volver al Menú</button>
+            <button onclick="location.href='consulta.html'">Regresar</button>
+        </div>
+    </div>
+
+    <script>
+        const carrito = [];
+
+        function agregarProducto(nombre, precio) {
+            const index = carrito.findIndex(producto => producto.nombre === nombre);
+
+            if (index !== -1) {
+                carrito[index].cantidad++;
+            } else {
+                carrito.push({ nombre, precio, cantidad: 1 });
+            }
+            renderizarCarrito();
+        }
+
+        function eliminarProducto(nombre) {
+            const index = carrito.findIndex(producto => producto.nombre === nombre);
+
+            if (index !== -1) {
+                carrito.splice(index, 1);
+            }
+            renderizarCarrito();
+        }
+
+        function disminuirCantidad(nombre) {
+            const index = carrito.findIndex(producto => producto.nombre === nombre);
+
+            if (index !== -1) {
+                carrito[index].cantidad--;
+
+                if (carrito[index].cantidad === 0) {
+                    carrito.splice(index, 1);
+                }
+            }
+            renderizarCarrito();
+        }
+
+        function vaciarCarrito() {
+            carrito.length = 0;
+            renderizarCarrito();
+        }
+
+        function renderizarCarrito() {
+            const tbody = document.querySelector('#carrito tbody');
+            tbody.innerHTML = '';
+
+            let total = 0;
+
+            if (carrito.length === 0) {
+                tbody.innerHTML = '<tr><td colspan="4" style="text-align:center;">El carrito está vacío</td></tr>';
+            }
+
+            carrito.forEach(producto => {
+                total += producto.precio * producto.cantidad;
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+                    <td>${producto.nombre}</td>
+                    <td>${producto.precio}</td>
+                    <td>${producto.cantidad}</td>
+                    <td>
+                        <button onclick="disminuirCantidad('${producto.nombre}')">-</button>
+                        <button onclick="eliminarProducto('${producto.nombre}')">Eliminar</button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+
+            document.getElementById('total').textContent = total.toFixed(2);
+        }
+    </script>
+</body>
+</html>

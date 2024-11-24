@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menú Principal</title>
+  <style>
+    /* Estilos generales */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #fa94d3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* Contenedor principal */
+    .menu-container {
+      display: flex;
+      width: 90%;
+      max-width: 1200px;
+      height: 80%;
+      background-color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Sección de imágenes */
+    .image-section {
+      flex: 1;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .left-image {
+      background-image: url('https://img2.wallspic.com/previews/3/3/2/1/6/161233/161233-shopping_mall-crowd-escalator-lighting-architecture-500x.jpg');
+    }
+
+    .right-image {
+      background-image: url('https://img2.wallspic.com/previews/3/3/2/1/6/161233/161233-shopping_mall-crowd-escalator-lighting-architecture-500x.jpg');
+    }
+
+    /* Sección central con botones */
+    .button-section {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: #ffe6f7;
+      padding: 20px;
+    }
+
+    .button-section h1 {
+      font-size: 2.5rem;
+      color: #6200ea;
+      margin-bottom: 20px;
+    }
+
+    .button-section button {
+      width: 80%;
+      max-width: 300px;
+      padding: 10px;
+      margin: 10px 0;
+      font-size: 1.2rem;
+      color: white;
+      background-color: #6200ea;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .button-section button:hover {
+      background-color: #3700b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu-container">
+    <!-- Imagen izquierda -->
+    <div class="image-section left-image"></div>
+
+    <!-- Botones en el centro -->
+    <div class="button-section">
+      <h1>MENÚ</h1>
+      <button onclick="location.href='login.html'">Volver a Inicio de Sesión</button>
+      <button onclick="location.href='consulta.html'">Volver a Consulta</button>
+      <button onclick="location.href='carrito.html'">Volver a Carrito de Compras</button>
+      <button onclick="location.href='credito.html'">Volver a Solicitar Crédito</button>
+    </div>
+
+    <!-- Imagen derecha -->
+    <div class="image-section right-image"></div>
+  </div>
+</body>
+</html>
